@@ -18,3 +18,4 @@ insert into productos(codigo, nombre, precio) values (5723, 'celulares', 100.0);
 insert into productos(codigo, nombre, precio) values (5714, 'laptops', 500.0);
 
 select * from  productos
+
