@@ -28,3 +28,15 @@ INSERT INTO videojuegos (codigo, nombre)
 VALUES (108, 'sudoku');
 
 select * from  videojuegos
+
+create table plataformas (
+id_plataforma int,
+nombre_plataforma varchar(50) not null,
+codigo_videojuego int,
+constraint id_plataforma_pk primary key (id_plataforma)
+);
+
+ALTER TABLE plataformas
+ADD CONSTRAINT fk_id_plataforma
+FOREIGN KEY (codigo_videojuego)
+REFERENCES videojuegos (codigo);
