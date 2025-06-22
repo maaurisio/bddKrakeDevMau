@@ -22,3 +22,56 @@ update cuentas set saldo = 12.00 where cedula_propietario like '17%'
 update estudiantes set apellido = 'Hernández' where cedula like '17%'
 --eliminar
 delete from registros_entrada
+
+
+--select con alias
+select cli.nombre from clientes cli where cli.nombre = 'Monica';
+--select
+select * from clientes;
+
+--COUNT: (n numero de filas de la tbla)
+select count (*) from clientes;
+
+--MIN: valor minimo de equis columna
+select min (monto) from compras;
+
+--MAX: valor maximo de equis columna
+select max (monto) from compras;
+
+--SUM: valor de la suma de equis columna
+select sum (stock) from productos;
+
+--AVG: promedio de equis columna 
+select avg (cast(precio as numeric)) from productos;
+
+--group by
+SELECT
+    producto,           -- La columna por la que queremos agrupar
+    SUM(monto) AS total_ventas -- La función de agregación (suma) para cada grupo
+FROM
+    ventas
+GROUP BY
+    producto;           -- Agrupamos por la columna 'producto'
+
+
+---------------------------------
+------------ROUND----------------
+
+	SELECT
+    numero_cuenta,
+    ROUND(
+        AVG(
+            CAST(tran.monto AS DECIMAL) -- Aquí está la corrección: CAST(expresión AS tipo)
+        )
+    ) AS monto_promedio
+FROM
+    transacciones tran
+GROUP BY
+    numero_cuenta; -- Necesitas un GROUP BY porque 'numero_cuenta' no es una función de agregación
+
+--------------------------
+select
+min(fecha) AS fecha_minima,
+max(fecha) AS fecha_maxima
+FROM
+    registros_entrada

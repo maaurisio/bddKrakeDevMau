@@ -6,3 +6,4 @@ select cli.cedula, cli.nombre, cli.apellido from clientes cli, compras com where
 
 select * from clientes;
 select * from compras;
+

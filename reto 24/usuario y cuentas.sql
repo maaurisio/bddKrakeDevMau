@@ -24,3 +24,12 @@ WHERE
     cuen.cedula_propietario = usu.cedula
 	AND cuen.fecha_creacion
 	between '2022-09-21' AND '2023-09-21'
+
+
+
+
+
+insert into usuario(cedula, nombre, apellido, tipo_cuenta) 
+values ('66666', 'diablo', 'sano', 'ahorros');
+insert into cuentas(numero_cuenta, cedula_propietario, fecha_creacion, saldo) 
+values (66696, '66666', '23/09/2003', 777.0);
