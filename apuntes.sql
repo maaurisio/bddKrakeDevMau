@@ -22,8 +22,8 @@ update cuentas set saldo = 12.00 where cedula_propietario like '17%'
 update estudiantes set apellido = 'Hernández' where cedula like '17%'
 --eliminar
 delete from registros_entrada
-
-
+--BETWEEN
+SELECT * FROM registros_entrada WHERE hora BETWEEN '07:00:00'AND '14:00:00';
 --select con alias
 select cli.nombre from clientes cli where cli.nombre = 'Monica';
 --select
