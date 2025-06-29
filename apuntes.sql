@@ -6,6 +6,13 @@ hora time not null,
 constraint codigo_registro_pk primary key (codigo_registro)
 );
 
+CREATE TABLE Clientes (
+    ClienteID SERIAL PRIMARY KEY, -- Esto crea una secuencia detrás de escena y asigna los valores
+    Nombre VARCHAR(100) NOT NULL,
+    Apellido VARCHAR(100) NOT NULL,
+    FechaRegistro DATE DEFAULT CURRENT_DATE -- Usar CURRENT_DATE para la fecha actual en PostgreSQL
+);
+
 
 --relacionar tablas de muchos a uno
 ALTER TABLE registros_entrada
